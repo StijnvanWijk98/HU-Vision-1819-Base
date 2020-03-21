@@ -16,7 +16,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+    
 namespace FaceRecognitionGUI
 {
     public partial class MainForm : Form
@@ -356,7 +356,10 @@ namespace FaceRecognitionGUI
             int i;
             for (i = 1; ; ++i)
             {
+                Console.WriteLine(testSetDir + "= testsetdir");
+                Console.WriteLine(tempFileName + "=tempfile");
                 path = System.IO.Path.Combine(testSetDir, tempFileName);
+
                 if (!System.IO.File.Exists(System.IO.Path.Combine(testSetDir, tempFileName))){
                     break;
                 }

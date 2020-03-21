@@ -8,6 +8,7 @@
 #include "PreProcessing.h"
 #include <opencv2/core/mat.hpp>
 #include "HereBeDragons.h"
+
 class StudentPreProcessing : public PreProcessing {
 public:
 	IntensityImage * stepToIntensityImage(const RGBImage &image) const;
