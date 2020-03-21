@@ -6,8 +6,12 @@
 
 #pragma once
 #include "PreProcessing.h"
-#include <opencv2/core/mat.hpp>
+#include "opencv2/core/core.hpp"
+#include "opencv2/imgproc/types_c.h"
+#include "opencv2/highgui/highgui.hpp"
 #include "HereBeDragons.h"
+#include "ImageFactory.h"
+#include <cmath>
 
 class StudentPreProcessing : public PreProcessing {
 public:
@@ -16,7 +20,5 @@ public:
 	IntensityImage * stepEdgeDetection(const IntensityImage &image) const;
 	IntensityImage * stepThresholding(const IntensityImage &image) const;
 private:
-	cv::Mat intensImgToMat(const IntensityImage& image);
-	IntensityImage* matToIntensImg(const cv::Mat& image);
-	cv::Mat combineKernels(const cv::Mat& x_res, const cv::Mat& y_res);
+	cv::Mat combineKernels(const cv::Mat& x_res, const cv::Mat& y_res) const;
 };
